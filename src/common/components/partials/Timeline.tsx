@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { Button } from '@mui/material';
 import { ArrowForwardIos } from '@mui/icons-material';
 import Routes from '@common/defs/routes';
+// import '@common/assets/styles/custom.css';
 
 interface Icon {
   icon: JSX.Element;
@@ -98,13 +99,7 @@ const Timeline = (): JSX.Element => {
 
   return (
     <div className="App">
-      <div className="flex">
-        <h3>
-          Create a vertical timeline component in React -{' '}
-          <a href="https://www.cluemediator.com/" target="_blank" rel="noopener noreferrer">
-            Clue Mediator
-          </a>
-        </h3>
+      <div className="timeline-create-btn">
         <Button
           variant="contained"
           endIcon={
