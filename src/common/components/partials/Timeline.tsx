@@ -3,6 +3,10 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faSchool, faStar } from '@fortawesome/free-solid-svg-icons';
+import { useRouter } from 'next/router';
+import { Button } from '@mui/material';
+import { ArrowForwardIos } from '@mui/icons-material';
+import Routes from '@common/defs/routes';
 
 interface Icon {
   icon: JSX.Element;
@@ -90,14 +94,39 @@ const Timeline = (): JSX.Element => {
     },
   ];
 
+  const router = useRouter();
+
   return (
     <div className="App">
-      <h3>
-        Create a vertical timeline component in React -{' '}
-        <a href="https://www.cluemediator.com/" target="_blank" rel="noopener noreferrer">
-          Clue Mediator
-        </a>
-      </h3>
+      <div className="flex">
+        <h3>
+          Create a vertical timeline component in React -{' '}
+          <a href="https://www.cluemediator.com/" target="_blank" rel="noopener noreferrer">
+            Clue Mediator
+          </a>
+        </h3>
+        <Button
+          variant="contained"
+          endIcon={
+            <ArrowForwardIos
+              fontSize="small"
+              className="arrow-icon"
+              sx={{ fontSize: '12px', transition: 'all, 0.15s' }}
+            />
+          }
+          onClick={() => router.push(Routes.Auth.Register)}
+          sx={{
+            display: { xs: 'none', md: 'flex' },
+            '&:hover': {
+              '.arrow-icon': {
+                transform: 'translateX(0.25rem)',
+              },
+            },
+          }}
+        >
+          Create
+        </Button>
+      </div>
       <VerticalTimeline>
         {timeline.map((t, i) => {
           const contentStyle =
