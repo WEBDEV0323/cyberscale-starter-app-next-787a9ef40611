@@ -8,8 +8,6 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
-import Link from '@mui/material/Link';
-import Routes from '@common/defs/routes';
 
 const RegisterForm = () => {
   const { login } = useAuth();
